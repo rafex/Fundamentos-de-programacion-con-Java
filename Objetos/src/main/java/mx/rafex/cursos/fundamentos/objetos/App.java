@@ -13,5 +13,10 @@ public class App
         for(Integer i = 300; i <= 400; i++) {
         	System.out.println(i);
         }
+        int a=1;
+        while (a<=80) {
+        	System.out.println(a);
+        	a ++;	
+        }
     }
 }
