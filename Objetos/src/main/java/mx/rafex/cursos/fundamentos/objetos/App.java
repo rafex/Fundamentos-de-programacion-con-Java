@@ -5,63 +5,55 @@ package mx.rafex.cursos.fundamentos.objetos;
  * Hello world!
  *
  */
-
-    	
-           
-       
 public class App {
-	public static void main(String[] args) {
-		System.out.println("Hello World!");
-	
-		int num = 50;
-		int numero=100;
-		System.out.println("Los numeros son ");
-		while (num < 80) {
-			num = num + 1;
-			System.out.println(num);
-		}
-		int x = 1;
 
-		for (int i = 1; i <= 100; i = i + 1) {
+    public static void main(String[] args) {
 
-			x = x + 1;
-		}
+        System.out.println("Hello World!");
 
-		for (Integer i = 300; i <= 400; i++) {
-			System.out.println(i);
-		}
-		int a = 1;
-		while (a <= 80) {
-			System.out.println(a);
-			a++;
-		}
+        // Alex
+        int num = 50;
+        int numero = 100;
+        System.out.println("Los numeros son ");
+        while (num < 80) {
+            num = num + 1;
+            System.out.println(num);
+        }
 
-		for (Integer i = 300; i <= 400; i++) {
-			System.out.println(i);
+        // Isarael
+        int x = 1;
+        for (int i = 1; i <= 100; i = i + 1)
+            x = x + 1;
 
-		}
+        // Sergio
+        for (Integer i = 300; i <= 400; i++)
+            System.out.println(i);
 
-		int i = 1;
-		System.out.println(i);
+        // abel
+        int a = 1;
+        while (a <= 80) {
+            System.out.println(a);
+            a++;
+        }
 
-		while (i < 1000) {
-			i = i + 1;
-		}
+        // Luis
+        for (Integer i = 300; i <= 400; i++)
+            System.out.println(i);
 
-		
-	   for (int j = 0; j <= 10; j++) {
+        // Andres
+        int i = 1;
+        System.out.println(i);
+        while (i < 1000)
+            i = i + 1;
 
-		System.out.println( + j);	
-	    }
+        // carlos
+        for (int j = 0; j <= 10; j++)
+            System.out.println(+j);
 
-
-		 do {
-	        	System.out.println("los numeros son"+numero);
-	        numero=numero+1;}
-	        while(numero<200);
-	}
+        // gustavo
+        do {
+            System.out.println("los numeros son" + numero);
+            numero = numero + 1;
+        } while (numero < 200);
+    }
 }
-	        	
-	    
-
-
