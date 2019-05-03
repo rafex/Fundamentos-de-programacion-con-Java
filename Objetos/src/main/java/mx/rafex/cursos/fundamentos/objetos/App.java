@@ -10,15 +10,10 @@ public class App
     {
         System.out.println( "Hello World!" );
         
-        int i = 49;
+       
 
-        while (true) {  
-
-            i++;
-
-            System.out.println ("incrementa a : " + i);
-
-            if (i==100) { break;}
+        for(Integer i = 300; i <= 400; i++) {
+        	System.out.println(i);
 
         }                
 
