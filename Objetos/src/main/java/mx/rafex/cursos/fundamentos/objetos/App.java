@@ -12,7 +12,7 @@ package mx.rafex.cursos.fundamentos.objetos;
 public class App {
 	public static void main(String[] args) {
 		System.out.println("Hello World!");
-		// Escribir un while que imprima del 50 al 80
+	
 		int num = 50;
 		int numero=100;
 		System.out.println("Los numeros son ");
@@ -47,6 +47,14 @@ public class App {
 		while (i < 1000) {
 			i = i + 1;
 		}
+
+		
+	   for (int j = 0; j <= 10; j++) {
+
+		System.out.println( + j);	
+	    }
+
+
 		 do {
 	        	System.out.println("los numeros son"+numero);
 	        numero=numero+1;}
@@ -55,4 +63,5 @@ public class App {
 }
 	        	
 	    
+
 
