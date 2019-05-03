@@ -1,3 +1,4 @@
+
 package mx.rafex.cursos.fundamentos.objetos;
 
 /**
@@ -28,6 +29,11 @@ public class App {
 		while (a <= 80) {
 			System.out.println(a);
 			a++;
+		}
+
+		for (Integer i = 300; i <= 400; i++) {
+			System.out.println(i);
+
 		}
 
 		int i = 1;
