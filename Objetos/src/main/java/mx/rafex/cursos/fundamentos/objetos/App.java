@@ -23,7 +23,7 @@ public class App {
             System.out.println(num);
         }
 
-        // Isarael
+        // Israel
         int x = 1;
         for (int i = 1; i <= 100; i = i + 1)
             x = x + 1;
