@@ -6,17 +6,13 @@ package mx.rafex.cursos.fundamentos.objetos;
  *
  */
 
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-        
-       System.out.println("llegue tarde");
+public class App {
 
-
+    public static void main(String[] args) {
 
         System.out.println("Hello World!");
+
+        System.out.println("llegue tarde");
 
         // Alex
         int num = 50;
@@ -62,9 +58,9 @@ public class App
             System.out.println("los numeros son" + numero);
             numero = numero + 1;
         } while (numero < 200);
-        
+
         System.out.println("si se pudo :V ");
 
     }
-    
+
 }
