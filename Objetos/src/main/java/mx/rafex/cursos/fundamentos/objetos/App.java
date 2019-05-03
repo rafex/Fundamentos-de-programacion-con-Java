@@ -4,6 +4,7 @@ package mx.rafex.cursos.fundamentos.objetos;
  * Hello world!
  *
  */
+
 public class App {
 	public static void main(String[] args) {
 		System.out.println("Hello World!");
@@ -14,6 +15,13 @@ public class App {
 			num = num + 1;
 			System.out.println(num);
 		}
+		int x = 1;
+
+		for (int i = 1; i <= 100; i = i + 1) {
+
+			x = x + 1;
+		}
+
 		for (Integer i = 300; i <= 400; i++) {
 			System.out.println(i);
 		}
