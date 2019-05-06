@@ -2,7 +2,7 @@ package mx.rafex.cursos.fundamentos.objetos.productos;
 
 import java.io.Serializable;
 
-public class Productos implements Serializable {
+public class Producto implements Serializable {
     /**
      *
      */
