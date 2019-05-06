@@ -3,7 +3,8 @@ package mx.rafex.cursos.fundamentos.objetos.productos;
 public class Productos {
     private Double precio;
     private String tipo;
-    private String departamento;
+    private String marca;
+    private Double costo;
 
     public Double getPrecio() {
         return this.precio;
@@ -21,12 +22,18 @@ public class Productos {
         this.tipo = tipo;
     }
 
-    public String getDepartamento() {
-        return this.departamento;
+    public String getMarca() {
+        return this.marca;
     }
 
-    public void setDepartamento(final String departamento) {
-        this.departamento = departamento;
+    public void setMarca(final String marca) {
+        this.marca = marca;
     }
 
-}
+    public Double getCosto() {
+        return this.costo;
+    }
+
+    public void setCosto(final Double costo) {
+        this.costo = costo;
+    }
