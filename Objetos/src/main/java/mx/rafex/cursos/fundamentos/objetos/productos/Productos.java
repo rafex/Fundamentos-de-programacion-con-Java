@@ -37,3 +37,4 @@ public class Productos {
     public void setCosto(final Double costo) {
         this.costo = costo;
     }
+}
