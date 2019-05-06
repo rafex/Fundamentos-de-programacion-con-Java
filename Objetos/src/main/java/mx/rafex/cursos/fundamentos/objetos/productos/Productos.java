@@ -1,12 +1,19 @@
 package mx.rafex.cursos.fundamentos.objetos.productos;
 
-public class Productos {
+import java.io.Serializable;
+
+public class Productos implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 4312979093082646331L;
     private Double precio;
     private String tipo;
     private String marca;
     private Double costo;
     private Double peso;
     private Integer cantidad;
+    private Long sku;
 
     public Double getPrecio() {
         return this.precio;
@@ -54,6 +61,14 @@ public class Productos {
 
     public void setCantidad(final Integer cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public Long getSku() {
+        return this.sku;
+    }
+
+    public void setSku(final Long sku) {
+        this.sku = sku;
     }
 
 }
