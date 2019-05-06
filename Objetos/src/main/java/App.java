@@ -6,12 +6,12 @@ public class App {
         System.out.println("Hello World !!!");
 
         // Luis Enrique
-        final int numeroLuis = 10;
+        final int numeroLuis = 9;
 
-        if (numeroLuis == 10) {
+        if (numeroLuis <= 10) {
 
         }
-        System.out.println("El numero es: " + numeroLuis);
+        System.out.println("El numero " + numeroLuis + " es menor o igual a 10");
 
     }
 
