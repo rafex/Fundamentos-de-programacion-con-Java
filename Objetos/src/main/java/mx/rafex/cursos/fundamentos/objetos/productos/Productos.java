@@ -5,6 +5,8 @@ public class Productos {
     private String tipo;
     private String marca;
     private Double costo;
+    private Double peso;
+    private Integer cantidad;
 
     public Double getPrecio() {
         return this.precio;
@@ -37,4 +39,21 @@ public class Productos {
     public void setCosto(final Double costo) {
         this.costo = costo;
     }
+
+    public Double getPeso() {
+        return this.peso;
+    }
+
+    public void setPeso(final Double peso) {
+        this.peso = peso;
+    }
+
+    public Integer getCantidad() {
+        return this.cantidad;
+    }
+
+    public void setCantidad(final Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
 }
