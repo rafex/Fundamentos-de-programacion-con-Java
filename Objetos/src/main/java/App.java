@@ -13,6 +13,11 @@ public class App {
             numero = numero + 1;
         } while (numero < 100);
 
+        // Andres
+        int a = 0;
+        for (int i = 1; i <= 100; i = i + 1) {
+            a = a + 1;
+        }
     }
 
 }
