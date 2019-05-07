@@ -1,4 +1,4 @@
-package mx.rafex.cursos.fundamentos.dtos;
+package mx.rafex.cursos.fundamentos.app;
 
 /**
  * Hello world!
