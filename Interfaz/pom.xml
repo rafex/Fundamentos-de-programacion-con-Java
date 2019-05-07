@@ -13,7 +13,9 @@
 	<groupId>mx.rafex.cursos.fundamentos.interfaz</groupId>
 	<artifactId>Interfaz</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Interfaz</name>
+	<packaging>jar</packaging>
+
+	<name>${project.artifactId}</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -22,15 +24,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>mx.rafex.cursos.fundamentos.objetos</groupId>
-			<artifactId>Objetos</artifactId>
+			<groupId>mx.rafex.cursos.fundamentos.negocio</groupId>
+			<artifactId>Negocio</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

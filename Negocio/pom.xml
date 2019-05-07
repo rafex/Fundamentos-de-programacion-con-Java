@@ -1,6 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -9,8 +11,8 @@
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-	<groupId>mx.rafex.cursos.fundamentos.objetos</groupId>
-	<artifactId>Objetos</artifactId>
+	<groupId>mx.rafex.cursos.fundamentos.negocio</groupId>
+	<artifactId>Negocio</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -22,6 +24,16 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>mx.rafex.cursos.fundamentos.daos</groupId>
+			<artifactId>DAO</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>mx.rafex.cursos.fundamentos.objetos</groupId>
+			<artifactId>Objetos</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -60,4 +72,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>

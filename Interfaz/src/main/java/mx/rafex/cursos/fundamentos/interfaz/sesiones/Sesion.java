@@ -4,11 +4,8 @@ import mx.rafex.cursos.fundamentos.objetos.usuarios.Usuario;
 
 public class Sesion {
 
-    public Boolean iniciarSesion(Usuario usuario) {
+    public Boolean iniciarSesion(final Usuario usuario) {
 
-        if (ORM.obtenerUsuario(usuario))
-            return true;
-
-        return false;
+        return true;
     }
 }

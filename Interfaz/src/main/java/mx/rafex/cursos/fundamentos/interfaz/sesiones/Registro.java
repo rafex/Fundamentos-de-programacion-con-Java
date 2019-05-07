@@ -8,12 +8,9 @@ public class Registro {
     private Persona persona;
     private Usuario usuario;
 
-    public Boolean registra(Persona persona, Usuario usuario) {
+    public Boolean registra(final Persona persona, final Usuario usuario) {
         this.persona = persona;
         this.usuario = usuario;
-
-        if (ORM.registroUsuarios())
-            return true;
 
         return false;
     }
