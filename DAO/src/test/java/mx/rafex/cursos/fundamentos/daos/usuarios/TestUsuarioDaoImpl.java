@@ -16,10 +16,10 @@ class TestUsuarioDaoImpl {
     void pruebaInsercionUsuario() {
 
         final UsuarioDto usuario = new UsuarioDto();
-        usuario.setAlias("rafex2");
-        usuario.setCorreoElectronico("rafex2.dev@gmail.com");
-        usuario.setContrasenya("12345.");
-        final UsuarioDto resultado = usuarioDao.crear(usuario);
+        usuario.setAlias("Israel");
+        usuario.setCorreoElectronico("israel.dev@gmail.com");
+        usuario.setContrasenya("12345");
+        final UsuarioDto resultado = this.usuarioDao.crear(usuario);
 
         assertNotNull(resultado, "fallo");
         assertNotNull(resultado.getId(), "fallo");
