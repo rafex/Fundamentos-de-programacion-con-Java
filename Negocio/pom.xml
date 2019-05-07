@@ -4,14 +4,15 @@
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>mx.rafex.cursos.fundamentos</groupId>
 		<artifactId>Base</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-	<groupId>mx.rafex.cursos.fundamentos.interfaz</groupId>
-	<artifactId>Interfaz</artifactId>
+	<groupId>mx.rafex.cursos.fundamentos.negocio</groupId>
+	<artifactId>Negocio</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -24,8 +25,13 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>mx.rafex.cursos.fundamentos.negocio</groupId>
-			<artifactId>Negocio</artifactId>
+			<groupId>mx.rafex.cursos.fundamentos.daos</groupId>
+			<artifactId>DAO</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>mx.rafex.cursos.fundamentos.objetos</groupId>
+			<artifactId>Objetos</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

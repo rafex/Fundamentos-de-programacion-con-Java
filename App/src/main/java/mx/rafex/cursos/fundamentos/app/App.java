@@ -2,15 +2,16 @@ package mx.rafex.cursos.fundamentos.app;
 
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
+import mx.rafex.cursos.fundamentos.daos.conexion.Sqlite;
 
 /**
  * Hello world!
  *
  */
-public class App {
+public class App extends Thread {
 
     public static void main(final String[] args) {
+
         mensaje("Bienvenidos al sistema básico de Fundamentos de programación con Java");
 
         int opcion = 0;
@@ -26,6 +27,7 @@ public class App {
                 mensaje("");
                 mensaje("1) Iniciar sesión");
                 mensaje("2) Registrar");
+                mensaje("3) Salir");
                 mensaje("");
                 mensaje("*****************************************");
                 mensaje("*****************************************");
@@ -39,18 +41,19 @@ public class App {
                     case 2:
                         menuPrincipal = false;
                         break;
+                    case 3:
+                        System.exit(0);
+                        break;
                     default:
+                        mensajeError("Opción invalida");
+                        sleep(500);
                         menuPrincipal = true;
-                        JOptionPane.showMessageDialog(null, "Opción invalida", "Error", JOptionPane.ERROR_MESSAGE);
                         break;
                 }
             } catch (final Exception e) {
                 mensajeError(e.getMessage());
             }
         while (menuPrincipal);
-
-        final String nom = JOptionPane.showInputDialog("Nombre:");
-        mensaje(nom);
 
         try {
             if (escaner != null)
@@ -59,6 +62,7 @@ public class App {
             mensajeError(e.getMessage());
         }
 
+        Sqlite.cerrarConexion();
     }
 
     public static void mensaje(final Object object) {

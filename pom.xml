@@ -16,6 +16,8 @@
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<maven-enforcer-plugin.version>3.0.0-M2</maven-enforcer-plugin.version>
 		<maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
+		<junit.jupiter.version>5.4.2</junit.jupiter.version>
+		<sqlite-jdbc.version>3.27.2.1</sqlite-jdbc.version>
 	</properties>
 
 	<modules>
@@ -24,5 +26,6 @@
 		<module>DAO</module>
 		<module>DTO</module>
     <module>App</module>
+    <module>Negocio</module>
   </modules>
 </project>
