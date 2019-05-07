@@ -6,6 +6,6 @@ public class Sesion {
 
     public Boolean iniciarSesion(final Usuario usuario) {
 
-        return false;
+        return true;
     }
 }
