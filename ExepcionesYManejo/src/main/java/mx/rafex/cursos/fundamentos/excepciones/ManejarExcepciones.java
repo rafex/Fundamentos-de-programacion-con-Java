@@ -1,4 +1,4 @@
-package mx.rafex.cursos.fundamentos.excepciones;
+package mx.rafex.cursos.fundamentos.excepciones;//prueba
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
