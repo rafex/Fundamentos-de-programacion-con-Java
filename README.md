@@ -77,14 +77,14 @@ Y para ello debemos hacer una gestión de los posibles fallos que puedan ocurrir
 Ahora bien en *Java* existen dos tipos de fallos:
 - **Errores**: Estos son fallos graves e involucran a la *JVM*, estos fallos detienen la ejecución del programa abruptamente y no pueden ser controlados, sino que deben ser corregidos.
 - **Excepciones**: Estos fallos no son críticos y pueden ser tratados para poder continuar con la ejecución del programa. Las excepciones en se dividen en dos tipos:
-    - Marcadas o verificadas (checked)
-    - No marcadas o no verificadas (unchecked)
+    - Marcadas o verificadas *(checked)*
+    - No marcadas o no verificadas *(unchecked)*
 
-## Excepciones marcadas o verificadas
+## Excepciones marcadas o verificadas *(checked)*
 
-Las excepciones marcadas o verficadas son aquellas que heredan de *Exception* por lo que es obligatorio su captura del error. Esto es que se definio usando la palabra reservada *throws*.
+Las excepciones marcadas o verficadas son aquellas que heredan de *Exception* por lo que es obligatorio su captura. Las excepciones marcadas se definen usando la palabra reservada *throws*.
 
-Un ejemplo una excepción marcada en un método sería así:
+Un ejemplo de una excepción marcada en un método sería así:
 ```java
 /**
  * Attempts to establish a connection to the given database URL.
@@ -110,7 +110,7 @@ public static Connection getConnection(String url)
 }
 ```
 
-Así que cuando utilicemos el método *Connection* debemos usar el bloque *try-catch-finally* que se define de la siguiente manera:
+Así que cuando utilicemos el método *Connection* debemos usar el bloque *try-catch-finally (que son palabras reservadas)* que se define de la siguiente manera:
 
 ```java
 try {
@@ -131,5 +131,152 @@ try {
     * Instrucciones que se ejecutan haya sucedido la excepción o no
     *
     */
+}
+```
+
+## Excepciones no marcadas o no verificadas *(unchecked)*
+
+Las excepciones no marcadas o no verficadas son aquellas que heredan de *RuntimeException*, aun qué *RuntimeException* herede de *Exception* no es una excepción marcada o verficada, es la única excepción a la regla. Así que estas excepciones no exige el compilador que escribamos el bloque *try-catch-finally*, pero eso no quiere decir que no lo podamos usar.
+
+Por ejemplo, si creamos un programa que recibe por teclado en la consola un número y el usuario inserta un caracter esto propiciara un error en tiempo de ejecución, en código sería así:
+
+Este sería el programa que espera un número
+```java
+import java.util.Scanner;
+
+public class Principal2 {
+
+    public static void main(final String[] args) {
+
+        Scanner entrada;
+
+        int numero = 0;
+        System.out.println("Inserta el un número");
+        entrada = new Scanner(System.in);
+        numero = entrada.nextInt();
+        System.out.println("El número que inserto es: " + numero);
+
+    }
+
+}
+```
+
+Pero si el usuario inserta cualquier caracter esto lanzaria una excepción de este tipo:
+
+![excepcion](doc/img/excepcion-runtime.png)
+
+Si se nota el código anterior compilo sin problema alguno, pero en *en tiempo de ejecución* fue cuando sucedio la excepción, así que para solucionar el problema sería así:
+
+```java
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Principal2 {
+
+    public static void main(final String[] args) {
+
+        Scanner entrada;
+
+        int numero = 0;
+        System.out.println("Inserta el un número");
+        try {
+            entrada = new Scanner(System.in);
+            numero = entrada.nextInt();
+            System.out.println("El número que inserto es: " + numero);
+        } catch (final InputMismatchException ex) {
+            System.out.println("Inserto un valor inesperado, se terminara el programa.");
+        }
+
+    }
+
+}
+```
+
+Ahora el programa termina bajo nuestros terminos y no inesperadamente.
+
+![excepcion](doc/img/excepcion-runtime2.png)
+
+Un mismo bloque de código puede lanzar diferentes excepciones *(no al mismo tiempo)* así que podemos atrapar varias excepciones, ejemplo:
+```java
+try {
+    /*
+    *
+    * Instrucciones que ejecutaremos antes de que suceda la excepción
+    *
+    */
+} catch (<AQUI_VA_LA_EXCEPCION_A_ATRAPAR> variableDondeSeAlmacenaraLaExcepcion){
+    /*
+    *
+    * Instrucciones que ejecutaremos cuando sucede la excepción atrapada
+    *
+    */
+} catch (<AQUI_VA_LA_EXCEPCION_A_ATRAPAR> variableDondeSeAlmacenaraLaExcepcion){
+    /*
+    *
+    * Instrucciones que ejecutaremos cuando sucede la excepción atrapada
+    *
+    */
+}catch (<AQUI_VA_LA_EXCEPCION_A_ATRAPAR> variableDondeSeAlmacenaraLaExcepcion){
+    /*
+    *
+    * Instrucciones que ejecutaremos cuando sucede la excepción atrapada
+    *
+    */
+}finally {
+    /*
+    *
+    * Instrucciones que se ejecutan haya sucedido la excepción o no
+    *
+    */
+}
+```
+
+Pero apartir de *Java SE 7* existe el multicatch que es así:
+
+```java
+try {
+    /*
+    *
+    * Instrucciones que ejecutaremos antes de que suceda la excepción
+    *
+    */
+} catch (<AQUI_VA_LA_EXCEPCION_A_ATRAPAR>|<AQUI_VA_LA_EXCEPCION_A_ATRAPAR> variableDondeSeAlmacenaraLaExcepcion){
+    /*
+    *
+    * Instrucciones que ejecutaremos cuando sucede la excepción atrapada
+    *
+    */
+} finally {
+    /*
+    *
+    * Instrucciones que se ejecutan haya sucedido la excepción o no
+    *
+    */
+}
+```
+
+Usando el multicatch en el código anterior sería así:
+```java
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Principal2 {
+
+    public static void main(final String[] args) {
+
+        Scanner entrada;
+
+        int numero = 0;
+        System.out.println("Inserta el un número");
+        try {
+            entrada = new Scanner(System.in);
+            numero = entrada.nextInt();
+            System.out.println("El número que inserto es: " + numero);
+        } catch (final IllegalStateException | InputMismatchException ex) {
+            System.out.println("Inserto un valor inesperado, se terminara el programa.");
+        }
+
+    }
+
 }
 ```
