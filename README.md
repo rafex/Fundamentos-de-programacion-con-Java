@@ -65,3 +65,47 @@ Aquí un listado de alternativas *Open Java Development Kit (OpenJDK)*:
 - Aplicaciones de Web
 - Aplicaciones de Software
 - Aplicaciones de Big Data
+
+---
+
+# <a name="excepciones"></a>Excepciones y Errores
+
+Al programar debemos considerar diferentes escenarios y uno de ellos es que puede fallar, así es, nuestro programa debe estar preparado para cometer fallos en tiempo de ejecución. A veces muchos de estos fallos se podrían mitigar creando una extensa interfaz que delimite los posibles valores a introducir, sin embargo eso no siempre funciona.
+
+Y para ello debemos hacer una gestión de los posibles fallos que puedan ocurrir, como valores inesperados, desconexión, sobre carga, etc... esto con la finalidad de controlar el error y poder ejecutar otra seríe de pasos para llevar el control del flujo del programa para que haga lo que deseamos cuando suceda el fallo.
+
+Ahora bien en *Java* existen dos tipos de fallos:
+- **Errores**: Estos son fallos graves e involucran a la *JVM*, estos fallos detienen la ejecución del programa abruptamente y no pueden ser controlados, sino que deben ser corregidos.
+- **Excepciones**: Estos fallos no son críticos y pueden ser tratados para poder continuar con la ejecución del programa. Las excepciones en se dividen en dos tipos:
+    - Marcadas o verificadas (checked)
+    - No marcadas o no verificadas (unchecked)
+
+## Excepciones marcadas o verificadas
+
+Las excepciones marcadas o verficadas son aquellas que heredan de *Exception* por lo que es obligatorio su captura del error. Esto es que se definio usando la palabra reservada *throws*.
+
+Un ejemplo en un método sería así:
+```java
+/**
+ * Attempts to establish a connection to the given database URL.
+ * The <code>DriverManager</code> attempts to select an appropriate driver from
+ * the set of registered JDBC drivers.
+ *
+ * @param url a database url of the form
+ *  <code> jdbc:<em>subprotocol</em>:<em>subname</em></code>
+ * @return a connection to the URL
+ * @exception SQLException if a database access error occurs or the url is
+ * {@code null}
+ * @throws SQLTimeoutException  when the driver has determined that the
+ * timeout value specified by the {@code setLoginTimeout} method
+ * has been exceeded and has at least tried to cancel the
+ * current database connection attempt
+ */
+@CallerSensitive
+public static Connection getConnection(String url)
+    throws SQLException {
+
+    java.util.Properties info = new java.util.Properties();
+    return (getConnection(url, info, Reflection.getCallerClass()));
+}
+```
