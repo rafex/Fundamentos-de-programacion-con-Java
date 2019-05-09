@@ -84,7 +84,7 @@ Ahora bien en *Java* existen dos tipos de fallos:
 
 Las excepciones marcadas o verficadas son aquellas que heredan de *Exception* por lo que es obligatorio su captura del error. Esto es que se definio usando la palabra reservada *throws*.
 
-Un ejemplo en un método sería así:
+Un ejemplo una excepción marcada en un método sería así:
 ```java
 /**
  * Attempts to establish a connection to the given database URL.
@@ -107,5 +107,29 @@ public static Connection getConnection(String url)
 
     java.util.Properties info = new java.util.Properties();
     return (getConnection(url, info, Reflection.getCallerClass()));
+}
+```
+
+Así que cuando utilicemos el método *Connection* debemos usar el bloque *try-catch-finally* que se define de la siguiente manera:
+
+```java
+try {
+    /*
+    *
+    * Instrucciones que ejecutaremos antes de que suceda la excepción
+    *
+    */
+} catch (<AQUI_VA_LA_EXCEPCION_A_ATRAPAR> variableDondeSeAlmacenaraLaExcepcion){
+    /*
+    *
+    * Instrucciones que ejecutaremos cuando sucede la excepción atrapada
+    *
+    */
+} finally {
+    /*
+    *
+    * Instrucciones que se ejecutan haya sucedido la excepción o no
+    *
+    */
 }
 ```
