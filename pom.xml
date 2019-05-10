@@ -24,5 +24,6 @@
 		<module>Objetos</module>
 		<module>Excepciones</module>
     <module>ExepcionesYManejo</module>
+    <module>BaseDeDatos</module>
   </modules>
 </project>
