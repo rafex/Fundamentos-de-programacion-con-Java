@@ -24,7 +24,6 @@
 
 	<modules>
 		<module>Objetos</module>
-		<module>Excepciones</module>
 		<module>ExepcionesYManejo</module>
 		<module>BaseDeDatos-fundamentos</module>
 		<module>GUI</module>
