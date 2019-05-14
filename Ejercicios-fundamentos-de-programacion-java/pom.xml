@@ -77,7 +77,7 @@
 					</descriptorRefs>
 					<archive>
 					  <manifest>
-						<mainClass>mx.rafex.cursos.fundamentos.ejercicios.App</mainClass>
+						<mainClass>mx.rafex.cursos.fundamentos.ejercicios.CalculadoraGUI</mainClass>
 					  </manifest>
 					</archive>
 
