@@ -14,12 +14,14 @@
 	<groupId>mx.rafex.cursos.fundamentos.ejercicios</groupId>
 	<artifactId>Ejercicios-fundamentos-de-programacion-java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
 	<name>${project.artifactId}</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -64,6 +66,32 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>${maven-assembly-plugin.version}</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+					  <manifest>
+						<mainClass>mx.rafex.cursos.fundamentos.ejercicios.App</mainClass>
+					  </manifest>
+					</archive>
+
+				</configuration>
+				<executions>
+				  <execution>
+					<id>make-assembly</id>
+					<phase>package</phase> 
+					<goals>
+						<goal>single</goal>
+					</goals>
+				  </execution>
+				</executions>
+</plugin>
 		</plugins>
 	</build>
 </project>
