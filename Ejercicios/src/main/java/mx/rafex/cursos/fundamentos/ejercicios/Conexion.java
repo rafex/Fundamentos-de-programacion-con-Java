@@ -1,4 +1,4 @@
-package mx.rafex.cursos.fundamentos.basededatos;
+package mx.rafex.cursos.fundamentos.ejercicios;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
