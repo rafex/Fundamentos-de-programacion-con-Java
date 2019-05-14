@@ -11,7 +11,7 @@
 	</parent>
 
 	<groupId>mx.rafex.cursos.fundamentos.basededatos</groupId>
-	<artifactId>BaseDeDatos</artifactId>
+	<artifactId>BaseDeDatos-fundamentos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>${project.artifactId}</name>

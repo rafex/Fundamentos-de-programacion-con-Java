@@ -1,19 +1,21 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  
-  <parent>
-    <groupId>mx.rafex.cursos.fundamentos</groupId>
-    <artifactId>Base</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
-  </parent>
-  
-  <groupId>mx.rafex.cursos.fundamentos.ejercicios</groupId>
-  <artifactId>Ejercicios</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  <name>${project.artifactId}</name>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>mx.rafex.cursos.fundamentos</groupId>
+		<artifactId>Base</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>mx.rafex.cursos.fundamentos.ejercicios</groupId>
+	<artifactId>Ejercicios-fundamentos-de-programacion-java</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>${project.artifactId}</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -21,6 +23,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.5</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -1,7 +1,7 @@
 package mx.rafex.cursos.fundamentos.ejercicios;
 
 import java.nio.charset.StandardCharsets;
-import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class App {
@@ -11,65 +11,82 @@ public class App {
     public static void main(final String[] args) {
 
         int opcionMenu = 0;
-        boolean ciclar = false;
-        Scanner s;
+        boolean ciclar = true;
+        Scanner s = null;
         String operacionSeleccionada = null;
 
         try {
             do {
-                s = new Scanner(System.in, StandardCharsets.UTF_8.name());
                 MENU.inicial();
                 try {
+                    s = new Scanner(System.in, StandardCharsets.UTF_8.name());
                     opcionMenu = s.nextInt();
+                    boolean ciclar2 = false;
                     switch (opcionMenu) {
-                    case 1:
-                        ciclar = false;
-                        do {
-                            MENU.operaciones();
-                            try {
-                                operacionSeleccionada = s.next();
-                                final Operaciones operacion = Operaciones.valueOf(operacionSeleccionada.toUpperCase());
-                                switch (operacion) {
-                                case SUMA:
-                                    break;
-                                case DIVISION:
-                                    break;
-                                case RESTA:
-                                    break;
-                                case MULTIPLICACION:
-                                    break;
-                                default:
-                                    System.out.println("Opción invalida-");
-                                    ciclar = true;
-                                    break;
+                        case 1:
+                            do {
+                                MENU.operaciones();
+                                try {
+                                    operacionSeleccionada = s.next();
+                                    final Operaciones tipoOperacion = Operaciones
+                                            .valueOf(operacionSeleccionada.toUpperCase());
+                                    final Operacion o = new Operacion();
+                                    switch (tipoOperacion) {
+                                        case SUMA:
+                                        case DIVISION:
+                                        case RESTA:
+                                        case MULTIPLICACION:
+                                        case M:
+                                        case S:
+                                        case R:
+                                        case D:
+                                            o.ejecutar(tipoOperacion);
+                                            ciclar2 = false;
+                                            break;
+                                        default:
+                                            System.err.println("Opción invalida-");
+                                            ciclar2 = true;
+                                            break;
+                                    }
+                                } catch (final IllegalArgumentException | NoSuchElementException
+                                        | NullPointerException e) {
+                                    ciclar2 = true;
+                                    System.err.println("Opción invalida*");
                                 }
-                            } catch (final IllegalArgumentException | NullPointerException e) {
-                                ciclar = true;
-                                System.out.println("Opción invalida*");
-                            }
-                        } while (ciclar);
-                        break;
-                    case 2:
-                        ciclar = false;
-                        break;
-                    case 3:
-                        System.out.println("Adios........!!!");
-                        ciclar = false;
-                        break;
-                    default:
-                        System.err.println("Opción invalida");
-                        ciclar = true;
-                        break;
+                            } while (ciclar2);
+
+                            ciclar = false;
+                            break;
+                        case 2:
+                            new TablaCalculadora().mostrarResultados();
+                            ciclar = false;
+                            break;
+                        case 3:
+                            System.out.println("Adios........!!!");
+                            ciclar = false;
+                            break;
+                        default:
+                            System.err.println("Opción invalida");
+                            ciclar = true;
+                            break;
                     }
-                } catch (final InputMismatchException e) {
+                } catch (final NoSuchElementException e) {
                     System.err.println("Opción invalida");
                     ciclar = true;
-
                 }
 
             } while (ciclar);
         } catch (final IllegalStateException e) {
 
+        }
+
+        finally {
+            if (s != null)
+                try {
+                    s.close();
+                } catch (final IllegalStateException e) {
+
+                }
         }
     }
 }
